@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -61,7 +62,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a
+        <Link
           href="#home"
           className={`text-2xl font-bold transition-colors duration-300 ${
             scrolled ? "text-red-300" : "text-red-500"
@@ -72,7 +73,7 @@ const Navbar = () => {
           }}
         >
           TRIPMAKER
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex gap-8">
@@ -82,7 +83,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <a
+              <Link
                 href={href}
                 onClick={(e) => {
                   e.preventDefault();
@@ -101,20 +102,19 @@ const Navbar = () => {
                     className={`absolute -bottom-1 left-0 w-full h-[2px] rounded bg-red-500`}
                   />
                 )}
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>
 
         {/* Book Now Button (Desktop) */}
-        <motion.a
+        <Link
           href="/"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+         
           className="hidden md:inline-block bg-red-600 text-white px-5 py-2 rounded-xl font-medium shadow hover:bg-red-700 transition-colors duration-300"
         >
           Book Now
-        </motion.a>
+        </Link>
 
         {/* Hamburger Menu Icon (Mobile) */}
         <div className="md:hidden">
@@ -139,7 +139,7 @@ const Navbar = () => {
           >
             <div className="flex flex-col gap-4">
               {links.map(({ label, href }) => (
-                <a
+                <Link
                   key={label}
                   href={href}
                   onClick={(e) => {
@@ -153,14 +153,14 @@ const Navbar = () => {
                   }`}
                 >
                   {label}
-                </a>
+                </Link>
               ))}
-              <a
+              <Link
                 href="/"
                 className="mt-2 inline-block bg-red-600 text-white text-center px-4 py-2 rounded-lg font-medium shadow hover:bg-red-700 transition"
               >
                 Book Now
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
