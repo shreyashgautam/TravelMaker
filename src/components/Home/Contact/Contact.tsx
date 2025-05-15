@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Github, Twitter, Linkedin, MapPin, Phone, Mail } from 'lucide-react';
+import Link from 'next/link';
 
 const Contact: React.FC = () => {
   return (
@@ -11,22 +12,22 @@ const Contact: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Left Section */}
             <div className="md:col-span-2">
-              <a href="/" className="text-xl font-semibold text-red-500 mb-2 block">
+              <Link href="/" className="text-xl font-semibold text-red-500 mb-2 block">
                 TripMaker
-              </a>
+              </Link>
               <p className="text-sm text-gray-600 max-w-md leading-relaxed mb-3">
                 Explore the world one trip at a time. TripMaker brings you curated travel packages, unique stays, and lifetime memories.
               </p>
               <div className="flex space-x-3">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-red-700 transition-colors">
+                <Link href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-red-700 transition-colors">
                   <Github className="h-4 w-4" />
-                </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-red-700 transition-colors">
+                </Link>
+                <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-red-700 transition-colors">
                   <Twitter className="h-4 w-4" />
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-red-700 transition-colors">
+                </Link>
+                <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-red-700 transition-colors">
                   <Linkedin className="h-4 w-4" />
-                </a>
+                </Link>
               </div>
             </div>
 
